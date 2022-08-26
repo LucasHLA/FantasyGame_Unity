@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 130923087}
   - component: {fileID: 130923088}
   - component: {fileID: 130923089}
+  - component: {fileID: 130923090}
   m_Layer: 0
   m_Name: LittleWitch
   m_TagString: Untagged
@@ -352,7 +353,26 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &130923090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130923084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a965d531e75b84ca25a84e643c6a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground:
+    serializedVersion: 2
+    m_Bits: 256
+  state: 0
+  health: 10
+  speed: 7
+  jumpForce: 7
 --- !u!1 &136745728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,7 +1827,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.5, y: -0.4, z: -10}
+  m_LocalPosition: {x: -16.29, y: -0.4, z: -10}
   m_LocalScale: {x: 1.292715, y: 1.1241, z: 1.1241}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9169,7 +9189,7 @@ GameObject:
   - component: {fileID: 2129409407}
   - component: {fileID: 2129409406}
   - component: {fileID: 2129409405}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
