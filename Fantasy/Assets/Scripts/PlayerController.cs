@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int health;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
+    private bool isJumping;
+    private bool isAttacking;
     
 
     protected virtual void Start()
@@ -28,42 +30,79 @@ public class PlayerController : MonoBehaviour
 
     protected virtual void Update()
     {
-        anim.SetInteger("state", (int)state);
+        Jump();
+        Fall();
+    }
+
+    protected virtual void FixedUpdate()
+    {
         Movement();
     }
 
-    public void Movement()
+    void Movement()
     {
+        //se nao pressionar nada, retorna 0. Se pressionar direita, retorna 1. Se for esquerda, retorna -1.
         float horizontal = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        state = State.walking;
 
         if (horizontal > 0)
         {
-            tr.eulerAngles = new Vector3(0, 0, 0);
-        }
-        else if(horizontal < 0)
-        {
-            tr.eulerAngles = new Vector3(0, 180, 0);
+            if (!isJumping && !isAttacking)
+            {
+                anim.SetInteger("state", 1);
+            }
+
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
 
-        if (Mathf.Abs(rb.velocity.x) <= 0)
+        if (horizontal < 0)
         {
-            state = State.idle;
+            if (!isJumping && !isAttacking)
+            {
+                anim.SetInteger("state", 1);
+            }
+
+            transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
-        if(Input.GetButtonDown("Jump") && col2D.IsTouchingLayers(ground))
+        if (horizontal == 0 && !isJumping && !isAttacking)
         {
-            Jump();
+            anim.SetInteger("state", 0);
         }
+
     }
 
     void Jump()
     {
-        state = State.jumping;
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);   
+        if (Input.GetButtonDown("Jump"))
+        {
+            anim.SetInteger("state", 2);
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            isJumping = true;
+
+        }
+    }
+
+    void Fall()
+    {
+        if (isJumping)
+        {
+            if(rb.velocity.y < 1f)
+            {
+                anim.SetInteger("state", 3);
+            }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D colisor)
+    {
+        if (colisor.gameObject.layer == 8)
+        {
+            isJumping = false;
+        }
     }
 }
+
 
   

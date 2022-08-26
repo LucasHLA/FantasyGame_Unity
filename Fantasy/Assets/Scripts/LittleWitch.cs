@@ -16,5 +16,9 @@ public class LittleWitch : PlayerController
 
     }
 
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
 
 }
