@@ -15,9 +15,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int health;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
-    private bool isJumping;
-    private bool isAttacking;
-    
+    protected bool isJumping;
+    protected bool isAttacking;
+    protected bool isRunning;
 
     protected virtual void Start()
     {
@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
             if (!isJumping && !isAttacking)
             {
                 anim.SetInteger("state", 1);
+                isRunning = true;
             }
 
             transform.eulerAngles = new Vector3(0, 0, 0);
@@ -61,6 +62,7 @@ public class PlayerController : MonoBehaviour
             if (!isJumping && !isAttacking)
             {
                 anim.SetInteger("state", 1);
+                isRunning = true;
             }
 
             transform.eulerAngles = new Vector3(0, 180, 0);
@@ -69,6 +71,7 @@ public class PlayerController : MonoBehaviour
         if (horizontal == 0 && !isJumping && !isAttacking)
         {
             anim.SetInteger("state", 0);
+            isRunning = false;
         }
 
     }
