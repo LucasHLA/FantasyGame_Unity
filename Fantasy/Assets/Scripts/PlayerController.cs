@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     protected bool isJumping;
     protected bool isAttacking;
     protected bool isRunning;
+    private float recoverTime;
 
     protected virtual void Start()
     {
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
     protected virtual void Update()
     {
         Jump();
-        Fall();
+        
     }
 
     protected virtual void FixedUpdate()
@@ -76,26 +77,43 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void Jump()
+    protected virtual void Jump()
     {
         if (Input.GetButtonDown("Jump"))
         {
             anim.SetInteger("state", 2);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isJumping = true;
-
         }
-    }
-
-    void Fall()
-    {
         if (isJumping)
         {
-            if(rb.velocity.y < 1f)
+            if (rb.velocity.y < 1f)
             {
                 anim.SetInteger("state", 3);
             }
         }
+    }
+
+    void OnHit(int dmg)
+    {
+        recoverTime += Time.deltaTime;
+
+        if(recoverTime >= 2f)
+        {
+            health -= dmg;
+            anim.SetTrigger("hit");
+
+            recoverTime = 0f;
+        }
+        
+        if(health <= 0)
+        {
+            speed = 0;
+            rb.velocity = Vector2.zero;
+            /*add death animation here
+            ganme over come here as well*/
+        }
+
     }
 
     void OnCollisionEnter2D(Collision2D colisor)

@@ -7,7 +7,7 @@ public class LittleWitch : PlayerController
     private bool isShooting;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
-    private float shootingTime;
+    
     protected override void Start()
     {
         base.Start();
@@ -17,7 +17,6 @@ public class LittleWitch : PlayerController
     {
         base.Update();
         Attack();
-        Debug.Log(shootingTime);
     }
 
     protected override void FixedUpdate()
