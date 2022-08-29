@@ -44,12 +44,22 @@ public class LittleWitch : PlayerController
 
     private void Attack()
     {
-        if(Input.GetButtonDown("Fire1") && !isRunning && !isAttacking)
+        if(Input.GetButtonDown("Fire1") && !isRunning && !isAttacking && !isJumping)
         {
             anim.SetInteger("state", 4);
             isAttacking = true;
             StartCoroutine(ThrowingMagic());
             StartCoroutine(OnShooting());
         }
+
+        if(!isAttacking && isJumping && Input.GetButtonDown("Fire1"))
+        {
+            anim.SetInteger("state", 5);
+            isAttacking = true;
+            Shoot();
+            StartCoroutine(OnShooting());
+        }
     }
+
+    
 }

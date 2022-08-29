@@ -79,19 +79,23 @@ public class PlayerController : MonoBehaviour
 
     protected virtual void Jump()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (col2D.IsTouchingLayers(ground))
         {
-            anim.SetInteger("state", 2);
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            isJumping = true;
-        }
-        if (isJumping)
-        {
-            if (rb.velocity.y < 1f)
+            if (Input.GetButtonDown("Jump"))
             {
-                anim.SetInteger("state", 3);
+                anim.SetInteger("state", 2);
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                isJumping = true;
+            }
+            if (isJumping)
+            {
+                if (rb.velocity.y < 1f)
+                {
+                    anim.SetInteger("state", 3);
+                }
             }
         }
+        
     }
 
     void OnHit(int dmg)
