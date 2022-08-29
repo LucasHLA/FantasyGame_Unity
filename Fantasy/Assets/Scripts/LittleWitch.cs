@@ -45,18 +45,12 @@ public class LittleWitch : PlayerController
 
     private void Attack()
     {
-        if(Input.GetButtonDown("Fire1") && !isRunning)
+        if(Input.GetButtonDown("Fire1") && !isRunning && !isAttacking)
         {
-            shootingTime += Time.deltaTime;
-            if (shootingTime >= .01f)
-            {
-                anim.SetInteger("state", 4);
-                isAttacking = true;
-                StartCoroutine(ThrowingMagic());
-                StartCoroutine(OnShooting());
-                shootingTime = 0;
-            }
-            
+            anim.SetInteger("state", 4);
+            isAttacking = true;
+            StartCoroutine(ThrowingMagic());
+            StartCoroutine(OnShooting());
         }
     }
 }

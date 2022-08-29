@@ -7,9 +7,11 @@ public class MagicProjectile : MonoBehaviour
     public float speed;
     public Rigidbody2D rb;
     [SerializeField] private Transform firePoint;
+    private Animator anim;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         rb.velocity = transform.right*speed;
     }
 
@@ -17,7 +19,9 @@ public class MagicProjectile : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            Destroy(gameObject, 1f);
+            anim.SetTrigger("hit");
+            rb.velocity = Vector2.zero;
+            Destroy(gameObject, 0.2f);
             //enemy hit method here
         }
 
