@@ -14,6 +14,7 @@ public class Slime : EnemyController
     [SerializeField] private Transform rightPoint;
     [SerializeField] private Transform leftPoint;
     private bool isJumping;
+    private float waitingTime;
 
 
     protected override void Start()
@@ -28,6 +29,7 @@ public class Slime : EnemyController
     // Update is called once per frame
     protected override void Update()
     {
+        waitingTime += Time.deltaTime;
         Move();
         Fall();
     }
@@ -45,12 +47,13 @@ public class Slime : EnemyController
         if (col2D.IsTouchingLayers(ground) && !isJumping)
         {
             anim.SetInteger("state", 0);
+            anim.SetInteger("state", 1);
         }
     }
 
     IEnumerator JumpRight()
-    {
-        yield return new WaitForSeconds(1f);
+    { 
+        yield return new WaitForSeconds(1.2f);
         anim.SetInteger("state", 2);
         rb.velocity = new Vector2(jumpLength, jumpHeight);
         
@@ -58,7 +61,7 @@ public class Slime : EnemyController
 
     IEnumerator Jump()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.2f);
         anim.SetInteger("state", 2);
         rb.velocity = new Vector2(-jumpLength, jumpHeight);
 
@@ -66,22 +69,23 @@ public class Slime : EnemyController
 
     void Move()
     {
+
         if (!facingLeft)
         {
             if (transform.position.x > leftCap)
             {
                 if (transform.localScale.x != 1)
                 {
-                    transform.eulerAngles = new Vector3(0,180f,0);
-                }
+                    transform.eulerAngles = new Vector3(0, 180f, 0);
 
-                if (col2D.IsTouchingLayers(ground) && !isJumping)
+                }
+                if (!isJumping && col2D.IsTouchingLayers(ground))
                 {
                     anim.SetInteger("state", 1);
                     StartCoroutine(Jump());
                     isJumping = true;
+                    waitingTime = 0f;
                 }
-
             }
             else
             {
@@ -97,24 +101,27 @@ public class Slime : EnemyController
                 if (transform.localScale.x != -1)
                 {
                     transform.eulerAngles = new Vector3(0, 0f, 0);
-                }
 
-                if (col2D.IsTouchingLayers(ground) && !isJumping)
+                }
+                if (!isJumping && col2D.IsTouchingLayers(ground))
                 {
-                    //jump
                     anim.SetInteger("state", 1);
                     StartCoroutine(JumpRight());
                     isJumping = true;
+                    waitingTime = 0f;
                 }
-
-            }
-            else
-            {
-                facingLeft = false;
+                else
+                {
+                    facingLeft = false;
+                }
             }
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+    }
 }
 
 

@@ -15,10 +15,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int health;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
+    [SerializeField] private float hurtForce;
     protected bool isJumping;
     protected bool isAttacking;
     protected bool isRunning;
     private float recoverTime;
+    
 
     protected virtual void Start()
     {
@@ -98,7 +100,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    void OnHit(int dmg)
+    public void OnHit(int dmg)
     {
         recoverTime += Time.deltaTime;
 
@@ -106,7 +108,6 @@ public class PlayerController : MonoBehaviour
         {
             health -= dmg;
             anim.SetTrigger("hit");
-
             recoverTime = 0f;
         }
         
@@ -120,11 +121,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D colisor)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (colisor.gameObject.layer == 8)
+        if (collision.gameObject.layer == 8)
         {
             isJumping = false;
+        }
+        if(collision.gameObject.CompareTag("Red"))
+        {
+            health--;
+            anim.SetTrigger("hit");
+            rb.velocity = new Vector2(hurtForce, rb.velocity.y);
         }
     }
 }

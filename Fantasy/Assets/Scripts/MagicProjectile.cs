@@ -17,7 +17,7 @@ public class MagicProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Red"))
         {
             anim.SetTrigger("hit");
             rb.velocity = Vector2.zero;
