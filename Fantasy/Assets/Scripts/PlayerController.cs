@@ -111,12 +111,19 @@ public class PlayerController : MonoBehaviour
         
         if(health <= 0)
         {
-            speed = 0;
-            rb.velocity = Vector2.zero;
-            /*add death animation here
-            ganme over come here as well*/
+            Death();
         }
 
+    }
+
+    public void Death()
+    {
+        anim.SetTrigger("death");
+        speed = 0;
+        rb.velocity = Vector2.zero;
+        Destroy(this.gameObject, .5f);
+        /*
+        ganme over come here as well*/
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -134,8 +141,7 @@ public class PlayerController : MonoBehaviour
 
             if (health <= 0)
             {
-                speed = 0;
-                rb.velocity = Vector2.zero;
+                Death();
                 
             }
         }
