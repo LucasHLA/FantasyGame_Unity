@@ -9,9 +9,6 @@ public class PlayerController : MonoBehaviour
     protected Transform tr;
     protected Collider2D col2D;
     [SerializeField] protected LayerMask ground;
-    protected enum State {idle, walking, jumping, falling}
-    [SerializeField] protected State state;  
-
     [SerializeField] private int health;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
@@ -102,6 +99,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnHit(int dmg)
     {
+        Debug.Log("damage!");
         recoverTime += Time.deltaTime;
 
         if(recoverTime >= 2f)
@@ -127,11 +125,19 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
-        if(collision.gameObject.CompareTag("Red"))
+        if(collision.gameObject.tag == "Red")
         {
+            
             health--;
             anim.SetTrigger("hit");
-            rb.velocity = new Vector2(hurtForce, rb.velocity.y);
+            
+
+            if (health <= 0)
+            {
+                speed = 0;
+                rb.velocity = Vector2.zero;
+                
+            }
         }
     }
 }

@@ -370,8 +370,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 256
-  state: 0
-  health: 10
+  health: 1
   speed: 7
   jumpForce: 7
   hurtForce: 4
@@ -10648,15 +10647,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6674572519761220400, guid: 0b642f38b1a82754da894d7172030258,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6674572519761220401, guid: 0b642f38b1a82754da894d7172030258,
         type: 3}
       propertyPath: m_Mass
-      value: 200
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674572519761220401, guid: 0b642f38b1a82754da894d7172030258,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6674572519761220401, guid: 0b642f38b1a82754da894d7172030258,
         type: 3}
       propertyPath: m_AngularDrag
-      value: 0
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 6674572519761220401, guid: 0b642f38b1a82754da894d7172030258,
         type: 3}
@@ -10782,6 +10791,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674572519761220415, guid: 0b642f38b1a82754da894d7172030258,
+        type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674572519761220415, guid: 0b642f38b1a82754da894d7172030258,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674572519761220415, guid: 0b642f38b1a82754da894d7172030258,
+        type: 3}
+      propertyPath: jumpLength
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b642f38b1a82754da894d7172030258, type: 3}
