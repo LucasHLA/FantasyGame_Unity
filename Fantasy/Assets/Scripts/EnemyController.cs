@@ -21,10 +21,10 @@ public class EnemyController : MonoBehaviour
         
     }
 
-    protected virtual void OnHit(int dmg)
+    public void OnHit(int dmg)
     {
         health -= dmg;
-
+        anim.SetTrigger("hit");
         if(health <= 0)
         {
             speed = 0;

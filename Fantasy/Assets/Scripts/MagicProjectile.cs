@@ -20,7 +20,7 @@ public class MagicProjectile : MonoBehaviour
         if (collision.CompareTag("Enemy") || collision.CompareTag("Red"))
         {
             anim.SetTrigger("hit");
-            rb.velocity = Vector2.zero;
+            collision.gameObject.GetComponent<EnemyController>().OnHit(1);
             Destroy(gameObject, 0.2f);
             //enemy hit method here
         }
