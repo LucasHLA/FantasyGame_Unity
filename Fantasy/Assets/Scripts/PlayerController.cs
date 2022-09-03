@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     protected bool isAttacking;
     protected bool isRunning;
     private float recoverTime;
+    private float gameOverTime;
     
 
     protected virtual void Start()
@@ -99,7 +100,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnHit(int dmg)
     {
-        Debug.Log("damage!");
+        
         recoverTime += Time.deltaTime;
 
         if(recoverTime >= 2f)
@@ -115,15 +116,16 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+    
 
     public void Death()
     {
+        gameOverTime += Time.deltaTime;
         anim.SetTrigger("death");
         speed = 0;
         rb.velocity = Vector2.zero;
         Destroy(this.gameObject, .5f);
-        /*
-        ganme over come here as well*/
+        GameController.instance.ShowGameOver();
     }
 
     void OnCollisionEnter2D(Collision2D collision)

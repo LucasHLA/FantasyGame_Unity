@@ -9116,13 +9116,15 @@ GameObject:
   - component: {fileID: 638507550}
   - component: {fileID: 638507552}
   - component: {fileID: 638507551}
+  - component: {fileID: 638507553}
+  - component: {fileID: 638507554}
   m_Layer: 5
-  m_Name: Image
+  m_Name: GameOverPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &638507550
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9182,6 +9184,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638507549}
   m_CullTransparentMesh: 0
+--- !u!114 &638507553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638507549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 333825785644b414f9b5c824f0a25bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+--- !u!114 &638507554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638507549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c3ffd493e79e94ab8b548f67ff1e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameOverPanel: {fileID: 638507549}
 --- !u!1 &761067313
 GameObject:
   m_ObjectHideFlags: 0
@@ -9516,6 +9544,50 @@ Transform:
   m_Father: {fileID: 631859333}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &929200147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 929200149}
+  - component: {fileID: 929200148}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &929200148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929200147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c3ffd493e79e94ab8b548f67ff1e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameOverPanel: {fileID: 638507549}
+--- !u!4 &929200149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929200147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 515.19635, y: 165.6473, z: -75.520744}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1090613925
 GameObject:
   m_ObjectHideFlags: 0
@@ -9671,6 +9743,7 @@ GameObject:
   - component: {fileID: 1621651774}
   - component: {fileID: 1621651773}
   - component: {fileID: 1621651772}
+  - component: {fileID: 1621651776}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -9797,6 +9870,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621651770}
   m_CullTransparentMesh: 0
+--- !u!114 &1621651776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621651770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 333825785644b414f9b5c824f0a25bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Menu
 --- !u!1 &1969997189
 GameObject:
   m_ObjectHideFlags: 0
@@ -9891,6 +9977,7 @@ GameObject:
   - component: {fileID: 1978667859}
   - component: {fileID: 1978667858}
   - component: {fileID: 1978667857}
+  - component: {fileID: 1978667861}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -9980,7 +10067,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1978667859}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1978667861}
+        m_MethodName: SceneLoader
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1978667859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10018,6 +10116,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978667855}
   m_CullTransparentMesh: 0
+--- !u!114 &1978667861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978667855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 333825785644b414f9b5c824f0a25bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: SampleScene
 --- !u!1 &2012411995
 GameObject:
   m_ObjectHideFlags: 0
