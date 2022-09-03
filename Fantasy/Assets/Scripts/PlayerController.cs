@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     protected virtual void Update()
     {
         Jump();
-        
+        Debug.Log(gameOverTime);
     }
 
     protected virtual void FixedUpdate()
@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
-        //se nao pressionar nada, retorna 0. Se pressionar direita, retorna 1. Se for esquerda, retorna -1.
         float horizontal = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
@@ -100,10 +99,9 @@ public class PlayerController : MonoBehaviour
 
     public void OnHit(int dmg)
     {
-        
         recoverTime += Time.deltaTime;
-
-        if(recoverTime >= 2f)
+        gameOverTime += Time.deltaTime;
+        if (recoverTime >= 2f)
         {
             health -= dmg;
             anim.SetTrigger("hit");
@@ -120,12 +118,13 @@ public class PlayerController : MonoBehaviour
 
     public void Death()
     {
-        gameOverTime += Time.deltaTime;
+        
         anim.SetTrigger("death");
         speed = 0;
         rb.velocity = Vector2.zero;
         Destroy(this.gameObject, .5f);
         GameController.instance.ShowGameOver();
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -134,7 +133,7 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
-        if(collision.gameObject.tag == "Red")
+        if(collision.gameObject.CompareTag("Red"))
         {
             
             health--;

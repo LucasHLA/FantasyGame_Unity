@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour
 {
     public GameObject GameOverPanel;
     public static GameController instance;
+
+    private float showTime;
     void Start()
     {
         instance = this;
@@ -19,6 +21,12 @@ public class GameController : MonoBehaviour
 
     public void ShowGameOver()
     {
+      StartCoroutine(CallGameOver());       
+    }
+
+    private IEnumerator CallGameOver()
+    {
+        yield return new WaitForSeconds(.9f);
         GameOverPanel.SetActive(true);
     }
 }
