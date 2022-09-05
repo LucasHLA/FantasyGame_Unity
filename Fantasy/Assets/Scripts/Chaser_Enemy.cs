@@ -45,33 +45,20 @@ public class Chaser_Enemy : EnemyController
         {
             if (hit.transform.CompareTag("Player"))
             {
-                anim.SetInteger("state", 1);
-                Debug.Log("hit achou");
+               anim.SetInteger("state", 1);
                isFront = true;
                float distance = Vector2.Distance(transform.position, hit.transform.position);
 
                 if (distance <= stopDistance)
                 {
-
                   isFront = false;
                   rb.velocity = Vector2.zero;
                   anim.SetInteger("state", 2);
                   hit.transform.GetComponent<PlayerController>().OnHit(2);
                 }
             }
-            else
-            {
-                Debug.Log("hit else ");
-                isFront = false;
-            }
         }
-        else
-        {
-            Debug.Log("hit nulo");
-            isFront = false;;
-            anim.SetInteger("state", 0);
-        }
-        
+       
 
         RaycastHit2D behindHit = Physics2D.Raycast(behindPoint.position, -direction, maxVision);
 
@@ -79,22 +66,20 @@ public class Chaser_Enemy : EnemyController
         {
             if (behindHit.transform.CompareTag("Player"))
             {
-                
-                Debug.Log("BehindHit vendo o player");
-                isRight = !isRight;
+              isRight = !isRight;
               isFront = true;
             }
-            else
-            {
-                Debug.Log("caiu no else do behind hit");
-                isFront = false;
-            }
+           
+        }
+
+        if(hit.collider == null && behindHit.collider == null)
+        {
+            anim.SetInteger("state", 0);
+            isFront = false;
         }
         else
         {
-            Debug.Log("behindHit nulo");
-            isFront = false;
-          
+            
         }
     }
 
