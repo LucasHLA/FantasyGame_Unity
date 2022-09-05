@@ -6,11 +6,10 @@ public class GameController : MonoBehaviour
 {
     public GameObject GameOverPanel;
     public static GameController instance;
-
-    private float showTime;
     void Start()
     {
         instance = this;
+        
     }
 
     // Update is called once per frame
@@ -21,12 +20,14 @@ public class GameController : MonoBehaviour
 
     public void ShowGameOver()
     {
-      StartCoroutine(CallGameOver());       
+      StartCoroutine(CallGameOver());
+      
     }
 
     private IEnumerator CallGameOver()
     {
         yield return new WaitForSeconds(.9f);
         GameOverPanel.SetActive(true);
+        Time.timeScale = 0.6f;
     }
 }
