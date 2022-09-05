@@ -21,7 +21,6 @@ public class GameController : MonoBehaviour
     public void ShowGameOver()
     {
       StartCoroutine(CallGameOver());
-      
     }
 
     private IEnumerator CallGameOver()
