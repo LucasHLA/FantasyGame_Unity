@@ -15,12 +15,6 @@ public class EnemyController : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    protected virtual void Update()
-    {
-        
-    }
-
     public void OnHit(int dmg)
     {
         health -= dmg;
@@ -37,10 +31,9 @@ public class EnemyController : MonoBehaviour
 
     public void Death()
     {
-        speed = 0;
-            rb.velocity = Vector2.zero;
-            anim.SetTrigger("death");
-            //here comes the death animation
-            Destroy(this.gameObject,.5f);
+       speed = 0;
+       rb.velocity = Vector2.zero;
+       anim.SetTrigger("death");
+       Destroy(this.gameObject,.5f);
     }
 }

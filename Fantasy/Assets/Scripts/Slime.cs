@@ -27,9 +27,8 @@ public class Slime : EnemyController
     }
 
     // Update is called once per frame
-    protected override void Update()
+    void Update()
     {
-        waitingTime += Time.deltaTime;
         Move();
         Fall();
     }

@@ -100,7 +100,6 @@ public class PlayerController : MonoBehaviour
     public void OnHit(int dmg)
     {
         recoverTime += Time.deltaTime;
-        gameOverTime += Time.deltaTime;
         if (recoverTime >= 2f)
         {
             health -= dmg;
@@ -110,7 +109,7 @@ public class PlayerController : MonoBehaviour
         
         if(health <= 0)
         {
-            Death();
+           Death();
         }
 
     }
@@ -118,11 +117,10 @@ public class PlayerController : MonoBehaviour
 
     public void Death()
     {
-        
         anim.SetTrigger("death");
         speed = 0;
         rb.velocity = Vector2.zero;
-        Destroy(this.gameObject, .5f);
+        Destroy(this.gameObject, 0.5f);
         GameController.instance.ShowGameOver();
 
     }
