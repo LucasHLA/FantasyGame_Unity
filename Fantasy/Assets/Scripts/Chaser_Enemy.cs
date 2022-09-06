@@ -77,10 +77,7 @@ public class Chaser_Enemy : EnemyController
             anim.SetInteger("state", 0);
             isFront = false;
         }
-        else
-        {
-            
-        }
+        
     }
 
     private void Movement()

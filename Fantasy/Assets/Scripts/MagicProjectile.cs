@@ -21,8 +21,14 @@ public class MagicProjectile : MonoBehaviour
         {
             anim.SetTrigger("hit");
             collision.gameObject.GetComponent<EnemyController>().OnHit(1);
-            Destroy(gameObject,0.1f);
-            //enemy hit method here
+            Destroy(gameObject,0.19f);
+            
+        }
+        if (collision.CompareTag("Blue"))
+        {
+            anim.SetTrigger("hit");
+            collision.gameObject.GetComponent<EnemyController>().OnHit(1);
+            Destroy(gameObject, 0.19f);
         }
 
     }

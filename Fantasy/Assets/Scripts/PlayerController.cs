@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     protected bool isRunning;
     private float recoverTime;
     private float gameOverTime;
-    
+
 
     protected virtual void Start()
     {
@@ -94,35 +94,30 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        
+
     }
 
     public void OnHit(int dmg)
     {
         recoverTime += Time.deltaTime;
-        if (recoverTime >= 2f)
+        if (recoverTime >= 1f)
         {
             health -= dmg;
             anim.SetTrigger("hit");
             recoverTime = 0f;
+            if (health <= 0)
+            {
+                Death();
+            }
         }
-        
-        if(health <= 0)
-        {
-           Death();
-        }
-
     }
-    
-
     public void Death()
     {
         anim.SetTrigger("death");
         speed = 0;
         rb.velocity = Vector2.zero;
-        Destroy(this.gameObject, 0.5f);
+        Destroy(this.gameObject, .5f);
         GameController.instance.ShowGameOver();
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -131,19 +126,20 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
-        if(collision.gameObject.CompareTag("Red"))
+        if (collision.gameObject.CompareTag("Red"))
         {
-            
+
             health--;
             anim.SetTrigger("hit");
-            
+
 
             if (health <= 0)
             {
                 Death();
-                
+
             }
         }
+
     }
 }
 
