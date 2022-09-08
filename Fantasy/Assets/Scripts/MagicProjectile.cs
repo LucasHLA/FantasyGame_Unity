@@ -13,6 +13,7 @@ public class MagicProjectile : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         rb.velocity = transform.right*speed;
+        Destroy(this.gameObject, 3f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

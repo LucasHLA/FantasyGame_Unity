@@ -108,7 +108,4 @@ public class Chaser_Enemy : EnemyController
       Gizmos.DrawRay(behindPoint.position, -direction * maxVision);
     }
 
-
-
-
 }
