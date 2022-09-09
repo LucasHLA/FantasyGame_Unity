@@ -21,9 +21,9 @@ public class Slime : EnemyController
     {
         base.Start();
         col2D = GetComponent<Collider2D>();
-        facingLeft = true;
-        rightCap = rightPoint.position.x;
-        leftCap = leftPoint.position.x;
+       
+       rightCap = rightPoint.position.x;
+       leftCap = leftPoint.position.x;
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class Slime : EnemyController
     {
         if (isJumping)
         {
-            if(rb.velocity.y < 1f)
+            if (rb.velocity.y < 1f)
             {
                 isJumping = false;
                 anim.SetInteger("state", 3);
@@ -51,11 +51,11 @@ public class Slime : EnemyController
     }
 
     IEnumerator JumpRight()
-    { 
+    {
         yield return new WaitForSeconds(1.2f);
         anim.SetInteger("state", 2);
         rb.velocity = new Vector2(jumpLength, jumpHeight);
-        
+
     }
 
     IEnumerator Jump()
@@ -109,18 +109,17 @@ public class Slime : EnemyController
                     isJumping = true;
                     waitingTime = 0f;
                 }
-                else
-                {
-                    facingLeft = false;
-                }
+                
+            }
+            else
+            {
+                facingLeft = false;
             }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+
     }
 }
-
-

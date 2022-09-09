@@ -4,75 +4,108 @@ using UnityEngine;
 
 public class Mage_Skeleton : EnemyController
 {
+    [SerializeField] private float maxVision;
+    [SerializeField] private float stopDistance;
 
-
-    [SerializeField] private bool mustPatrol;
-    [SerializeField] private bool mustFlip;
-    [SerializeField] private Transform detector;
-    [SerializeField] private LayerMask ground;
-    [SerializeField] private Collider2D wallDetection;
-
-    private bool isRight;
+    [SerializeField] private Transform point;
+    [SerializeField] private Transform behindPoint;
+    [SerializeField] private bool isFront;
+    [SerializeField] private bool isRight;
+    private Vector2 direction;
 
     protected override void Start()
     {
         base.Start();
-        mustPatrol = true;
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (mustPatrol)
+        if (isRight)
         {
-            Patrol();
+            transform.eulerAngles = new Vector2(0, 0);
+            direction = Vector2.right;
+
+        }
+
+        else
+        {
+            transform.eulerAngles = new Vector2(0, 180);
+            direction = Vector2.left;
+
         }
     }
 
     private void FixedUpdate()
     {
-        if (mustPatrol)
-        {
-            mustFlip = !Physics2D.OverlapCircle(detector.position, 0.1f, ground);
-            isRight = !isRight;
-        }
+        GetPlayer();
+        Movement();
     }
 
-
-    private void Patrol()
+    private void GetPlayer()
     {
-        if (mustFlip || wallDetection.IsTouchingLayers(ground))
+        RaycastHit2D hit = Physics2D.Raycast(point.position, direction, maxVision);
+
+        if (hit.collider != null)
         {
-            Flip();
+            if (hit.transform.CompareTag("Player"))
+            {
+                anim.SetInteger("state", 1);
+                isFront = true;
+                float distance = Vector2.Distance(transform.position, hit.transform.position);
+
+                if (distance <= stopDistance)
+                {
+                    isFront = false;
+                    rb.velocity = Vector2.zero;
+                    anim.SetInteger("state", 2);
+                    hit.transform.GetComponent<PlayerController>().OnHit(2);
+                }
+            }
         }
-        rb.velocity = new Vector2(speed, rb.velocity.y);
+
+
+        RaycastHit2D behindHit = Physics2D.Raycast(behindPoint.position, -direction, maxVision);
+
+        if (behindHit.collider != null)
+        {
+            if (behindHit.transform.CompareTag("Player"))
+            {
+                isRight = !isRight;
+                isFront = true;
+            }
+
+        }
+
+        if (hit.collider == null && behindHit.collider == null)
+        {
+            anim.SetInteger("state", 0);
+            isFront = false;
+        }
+
     }
 
-    private void Flip()
+    private void Movement()
     {
-        mustPatrol = false;
-        if (isRight)
+        if (isFront)
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-            speed *= -1;
+            anim.SetInteger("state", 1);
+            if (isRight)
+            {
+                transform.eulerAngles = new Vector2(0, 0);
+                direction = Vector2.right;
+                rb.velocity = new Vector2(speed, rb.velocity.y);
+            }
+            else
+            {
+                transform.eulerAngles = new Vector2(0, 180);
+                direction = Vector2.left;
+                rb.velocity = new Vector2(-speed, rb.velocity.y);
+            }
         }
-        else
-        {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-            speed *= -1;
-        }
-        
-        
-        mustPatrol = true;
-        
-    }
 
-    
+
+    }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(detector.position, 0.1f);
+        Gizmos.DrawRay(point.position, direction * maxVision);
+        Gizmos.DrawRay(behindPoint.position, -direction * maxVision);
     }
 
 }
