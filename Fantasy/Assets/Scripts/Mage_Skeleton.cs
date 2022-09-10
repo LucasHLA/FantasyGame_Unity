@@ -6,11 +6,15 @@ public class Mage_Skeleton : EnemyController
 {
     [SerializeField] private float maxVision;
     [SerializeField] private float stopDistance;
+    [SerializeField] private bool isFront;
+    [SerializeField] private bool isRight;
+    [SerializeField] private bool isShooting;
 
     [SerializeField] private Transform point;
     [SerializeField] private Transform behindPoint;
-    [SerializeField] private bool isFront;
-    [SerializeField] private bool isRight;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform firePoint;
+
     private Vector2 direction;
 
     protected override void Start()
@@ -37,6 +41,21 @@ public class Mage_Skeleton : EnemyController
         Movement();
     }
 
+    private void Shoot()
+    {
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    }
+    IEnumerator ThrowingMagic()
+    {
+        yield return new WaitForSeconds(1f);
+        Shoot();
+    }
+    IEnumerator OnShooting()
+    {
+        yield return new WaitForSeconds(1f);
+        isShooting = false;
+    }
+
     private void GetPlayer()
     {
         RaycastHit2D hit = Physics2D.Raycast(point.position, direction, maxVision);
@@ -49,12 +68,14 @@ public class Mage_Skeleton : EnemyController
                 isFront = true;
                 float distance = Vector2.Distance(transform.position, hit.transform.position);
 
-                if (distance <= stopDistance)
+                if (distance <= stopDistance && !isShooting)
                 {
+                    isShooting = true;
                     isFront = false;
                     rb.velocity = Vector2.zero;
                     anim.SetInteger("state", 2);
-                    hit.transform.GetComponent<PlayerController>().OnHit(2);
+                    StartCoroutine(ThrowingMagic());  
+                    StartCoroutine(OnShooting());
                 }
             }
         }
