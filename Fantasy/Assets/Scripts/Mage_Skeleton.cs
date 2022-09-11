@@ -52,7 +52,7 @@ public class Mage_Skeleton : EnemyController
     }
     IEnumerator OnShooting()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         isShooting = false;
     }
 
@@ -68,14 +68,17 @@ public class Mage_Skeleton : EnemyController
                 isFront = true;
                 float distance = Vector2.Distance(transform.position, hit.transform.position);
 
-                if (distance <= stopDistance && !isShooting)
+                if (distance <= stopDistance)
                 {
-                    isShooting = true;
                     isFront = false;
                     rb.velocity = Vector2.zero;
                     anim.SetInteger("state", 2);
-                    StartCoroutine(ThrowingMagic());  
-                    StartCoroutine(OnShooting());
+                    if (!isShooting)
+                    {
+                        isShooting = true;
+                        StartCoroutine(ThrowingMagic());
+                        StartCoroutine(OnShooting());
+                    }
                 }
             }
         }

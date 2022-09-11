@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     protected virtual void Update()
     {
         Jump();
-        Debug.Log(gameOverTime);
+        Debug.Log(recoverTime);
     }
 
     protected virtual void FixedUpdate()
