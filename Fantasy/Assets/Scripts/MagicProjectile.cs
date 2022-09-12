@@ -22,15 +22,23 @@ public class MagicProjectile : MonoBehaviour
         {
             anim.SetTrigger("hit");
             collision.gameObject.GetComponent<EnemyController>().OnHit(1);
-            Destroy(gameObject,0.19f);
+            Destroy(this.gameObject,0.19f);
             
         }
         if (collision.CompareTag("Blue"))
         {
             anim.SetTrigger("hit");
             collision.gameObject.GetComponent<EnemyController>().OnHit(1);
-            Destroy(gameObject, 0.19f);
+            Destroy(this.gameObject, 0.19f);
         }
+
+        if (collision.CompareTag("Mage"))
+        {
+            anim.SetTrigger("hit");
+            collision.gameObject.GetComponent<Mage_Skeleton>().MageOnHit(1);
+            Destroy(this.gameObject, 0.19f);
+        }
+
 
     }
 }

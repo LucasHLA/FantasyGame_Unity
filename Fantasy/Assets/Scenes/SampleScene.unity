@@ -9075,7 +9075,7 @@ RectTransform:
   m_Children:
   - {fileID: 638507550}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9426,7 +9426,7 @@ GameObject:
   - component: {fileID: 2085248031}
   m_Layer: 0
   m_Name: Mage_Skeleton
-  m_TagString: Enemy
+  m_TagString: Mage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9563,7 +9563,7 @@ Transform:
   - {fileID: 1527360524}
   - {fileID: 920258478}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2085248031
 MonoBehaviour:
@@ -9577,13 +9577,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a87e04d09da06d489da5f4e66baf439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 1
   speed: 3
   maxVision: 4
-  stopDistance: 10
+  stopDistance: 4
   isFront: 0
   isRight: 0
-  isShooting: 0
   point: {fileID: 1566453118}
   behindPoint: {fileID: 1527360524}
   bulletPrefab: {fileID: 2908104183145900255, guid: d54560eb586f563478b851a6e03ad727,
@@ -11070,7 +11069,7 @@ PrefabInstance:
     - target: {fileID: 1642114723319844364, guid: ea156c93de7a6604da5f9c589b595e52,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 109.898575
       objectReference: {fileID: 0}
     - target: {fileID: 1642114723319844364, guid: ea156c93de7a6604da5f9c589b595e52,
         type: 3}
@@ -11115,7 +11114,7 @@ PrefabInstance:
     - target: {fileID: 1642114723319844364, guid: ea156c93de7a6604da5f9c589b595e52,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 0.00015163
       objectReference: {fileID: 0}
     - target: {fileID: 1642114723319844364, guid: ea156c93de7a6604da5f9c589b595e52,
         type: 3}
@@ -11140,7 +11139,7 @@ PrefabInstance:
     - target: {fileID: 1642114723319844367, guid: ea156c93de7a6604da5f9c589b595e52,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea156c93de7a6604da5f9c589b595e52, type: 3}
@@ -11233,7 +11232,7 @@ PrefabInstance:
     - target: {fileID: 7782570645837835853, guid: 33c09d853bc7c97468659f534ab84a45,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7782570645837835853, guid: 33c09d853bc7c97468659f534ab84a45,
         type: 3}

@@ -21,11 +21,7 @@ public class EnemyController : MonoBehaviour
         anim.SetTrigger("hit");
         if(health <= 0)
         {
-            speed = 0;
-            rb.velocity = Vector2.zero;
-            anim.SetTrigger("death");
-            //here comes the death animation
-            Destroy(this.gameObject,.5f);
+            Death();
         }
     }
 

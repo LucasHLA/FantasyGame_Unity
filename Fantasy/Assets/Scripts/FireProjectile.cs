@@ -21,7 +21,7 @@ public class FireProjectile : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             anim.SetTrigger("hit");
-            collision.gameObject.GetComponent<PlayerController>().OnHit(3);
+            collision.gameObject.GetComponent<PlayerController>().RangeOnHit(3);
             Destroy(gameObject, 0.1f);
         }
 

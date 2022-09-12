@@ -8,7 +8,8 @@ public class Mage_Skeleton : EnemyController
     [SerializeField] private float stopDistance;
     [SerializeField] private bool isFront;
     [SerializeField] private bool isRight;
-    [SerializeField] private bool isShooting;
+
+    private bool isShooting;
 
     [SerializeField] private Transform point;
     [SerializeField] private Transform behindPoint;
@@ -124,6 +125,25 @@ public class Mage_Skeleton : EnemyController
         }
 
 
+    }
+
+    public void MageOnHit(int dmg)
+    {
+        health -= dmg;
+        anim.SetTrigger("hit");
+        if (health <= 0)
+        {
+            MageDeath();
+        }
+    }
+
+    private void MageDeath()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        anim.SetTrigger("death");
+        speed = 0;
+        rb.velocity = Vector2.zero;
+        Destroy(this.gameObject, 2f);
     }
 
     private void OnDrawGizmos()

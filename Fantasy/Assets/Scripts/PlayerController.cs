@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float hurtForce;
+    [SerializeField] private GameObject fairy;
     protected bool isJumping;
     protected bool isAttacking;
     protected bool isRunning;
@@ -111,12 +112,24 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    public void RangeOnHit(int dmg)
+    {
+        health -= dmg;
+        anim.SetTrigger("hit");
+
+        if(health <= 0)
+        {
+            Death();
+        }
+    }
     public void Death()
     {
         anim.SetTrigger("death");
         speed = 0;
         rb.velocity = Vector2.zero;
         Destroy(this.gameObject, .5f);
+        Destroy(fairy, .5f);
         GameController.instance.ShowGameOver();
     }
 
