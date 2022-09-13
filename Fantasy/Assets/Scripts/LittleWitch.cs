@@ -5,18 +5,24 @@ using UnityEngine;
 public class LittleWitch : PlayerController
 {
     private bool isShooting;
+    public int healthAmount;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
+    [SerializeField] private int healthMax;
+    [SerializeField] private int healthMin;
     
     protected override void Start()
     {
         base.Start();
+        healthMax = 5;
+        healthMin = 1;
     }
 
     protected override void Update()
     {
         base.Update();
         Attack();
+        HealthPower();
     }
 
     protected override void FixedUpdate()
@@ -58,6 +64,20 @@ public class LittleWitch : PlayerController
             isAttacking = true;
             Shoot();
             StartCoroutine(OnShooting());
+        }
+    }
+
+    private void HealthPower()
+    {
+        if(healthAmount >= healthMin && healthAmount <= healthMax)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                healthAmount--;
+                health += 2;
+                
+
+            }
         }
     }
 

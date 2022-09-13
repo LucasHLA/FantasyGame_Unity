@@ -9,11 +9,11 @@ public class PlayerController : MonoBehaviour
     protected Transform tr;
     protected Collider2D col2D;
     [SerializeField] protected LayerMask ground;
-    [SerializeField] private int health;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float hurtForce;
     [SerializeField] private GameObject fairy;
+    public int health;
     protected bool isJumping;
     protected bool isAttacking;
     protected bool isRunning;
