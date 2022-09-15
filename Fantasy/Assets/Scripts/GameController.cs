@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -7,12 +8,13 @@ public class GameController : MonoBehaviour
     public GameObject GameOverPanel;
     public LittleWitch witch;
     public int playerHealthAmount;
+    [SerializeField] private TextMeshProUGUI HealinghNumber;
     public Animator healthPower;
     public static GameController instance;
     void Start()
     {
         instance = this;
-        
+        HealinghNumber.text = playerHealthAmount.ToString();
     }
 
     // Update is called once per frame
@@ -20,6 +22,7 @@ public class GameController : MonoBehaviour
     {
         playerHealthAmount = witch.healthAmount;
         HealthPowerState();
+        HealinghNumber.text = playerHealthAmount.ToString();
     }
 
     public void ShowGameOver()
@@ -47,6 +50,10 @@ public class GameController : MonoBehaviour
         else if(playerHealthAmount == 5)
         {
             healthPower.SetInteger("state", 2);
+        }
+        else
+        {
+            healthPower.SetInteger("state", 0);
         }
     }
 }

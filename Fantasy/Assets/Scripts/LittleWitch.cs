@@ -10,6 +10,7 @@ public class LittleWitch : PlayerController
     [SerializeField] private Transform firePoint;
     [SerializeField] private int healthMax;
     [SerializeField] private int healthMin;
+    [SerializeField] private ParticleSystem healingParticle;
     
     protected override void Start()
     {
@@ -71,13 +72,30 @@ public class LittleWitch : PlayerController
     {
         if(healthAmount >= healthMin && healthAmount <= healthMax)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (health < 10)
             {
-                healthAmount--;
-                health += 2;
-                
+                if(health <= 8)
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Instantiate(healingParticle, transform.position, healingParticle.transform.rotation);
+                        healthAmount--;
+                        health += 2;
+
+                    }
+                }
+               
+
+                if (Input.GetKeyDown(KeyCode.E) && health == 9)
+                {
+                    Instantiate(healingParticle, transform.position, healingParticle.transform.rotation);
+                    healthAmount--;
+                    health += 1;
+                }
 
             }
+
+
         }
     }
 
