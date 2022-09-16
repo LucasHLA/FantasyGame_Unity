@@ -14,6 +14,7 @@ public class Mage_Skeleton : EnemyController
     [SerializeField] private Transform point;
     [SerializeField] private Transform behindPoint;
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject healingPrefab;
     [SerializeField] private Transform firePoint;
 
     private Vector2 direction;
@@ -143,6 +144,7 @@ public class Mage_Skeleton : EnemyController
         anim.SetTrigger("death");
         speed = 0;
         rb.velocity = Vector2.zero;
+        Instantiate(healingPrefab, transform.position, healingPrefab.transform.rotation);
         Destroy(this.gameObject, 2f);
     }
 

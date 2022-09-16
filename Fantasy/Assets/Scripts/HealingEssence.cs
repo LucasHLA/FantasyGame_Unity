@@ -14,7 +14,7 @@ public class HealingEssence : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         tr = GetComponent<Transform>();
         rb.AddForce(Vector2.up * yImpulse, ForceMode2D.Impulse);
-        Destroy(this.gameObject, 3f);
+        Destroy(this.gameObject, 7f);
     }
 
     private void Update()
