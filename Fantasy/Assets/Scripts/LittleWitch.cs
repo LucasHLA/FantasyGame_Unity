@@ -16,7 +16,7 @@ public class LittleWitch : PlayerController
     {
         base.Start();
         healthMax = 5;
-        healthMin = 1;
+        healthMin = 0;
     }
 
     protected override void Update()
@@ -70,7 +70,7 @@ public class LittleWitch : PlayerController
 
     private void HealthPower()
     {
-        if(healthAmount >= healthMin && healthAmount <= healthMax)
+        if(healthAmount > healthMin && healthAmount <= healthMax)
         {
             if (health < 10)
             {

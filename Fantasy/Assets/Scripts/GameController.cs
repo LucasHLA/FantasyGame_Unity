@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public int playerHealthAmount;
     [SerializeField] private TextMeshProUGUI HealinghNumber;
     public Animator healthPower;
+    public Animator heart;
     public static GameController instance;
     void Start()
     {
@@ -23,6 +24,7 @@ public class GameController : MonoBehaviour
         playerHealthAmount = witch.healthAmount;
         HealthPowerState();
         HealinghNumber.text = playerHealthAmount.ToString();
+        HeartState();
     }
 
     public void ShowGameOver()
@@ -54,6 +56,18 @@ public class GameController : MonoBehaviour
         else
         {
             healthPower.SetInteger("state", 0);
+        }
+    }
+
+    public void HeartState()
+    {
+        if(witch.health < witch.maxHealth)
+        {
+            heart.SetInteger("state", 0);
+        }
+        else if(witch.health  == witch.maxHealth)
+        {
+            heart.SetInteger("state", 1);
         }
     }
 }

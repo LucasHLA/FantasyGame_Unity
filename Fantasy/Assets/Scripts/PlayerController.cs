@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float hurtForce;
     [SerializeField] private GameObject fairy;
+    [SerializeField] private HealthBar healthBar;
     public int health;
+    public int maxHealth;
     protected bool isJumping;
     protected bool isAttacking;
     protected bool isRunning;
@@ -27,11 +29,14 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         tr = GetComponent<Transform>();
         col2D = GetComponent<Collider2D>();
-
+        maxHealth = 10;
+        health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     protected virtual void Update()
     {
+        healthBar.SetHealth(health);
         Jump();
     }
 
@@ -104,6 +109,7 @@ public class PlayerController : MonoBehaviour
         {
             health -= dmg;
             anim.SetTrigger("hit");
+            healthBar.SetHealth(health);
             recoverTime = 0f;
             if (health <= 0)
             {
