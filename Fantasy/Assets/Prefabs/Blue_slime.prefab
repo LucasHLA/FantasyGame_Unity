@@ -227,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   speed: 5
-  maxVision: 0
+  maxVision: 4
   stopDistance: 1
   isFront: 0
   isRight: 0

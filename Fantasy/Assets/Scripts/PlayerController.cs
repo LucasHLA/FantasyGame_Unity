@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     protected Animator anim;
     protected Transform tr;
     protected Collider2D col2D;
+    [SerializeField] private LittleWitch witch;
     [SerializeField] protected LayerMask ground;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
@@ -156,8 +157,21 @@ public class PlayerController : MonoBehaviour
                 Death();
 
             }
-        }
+        } 
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Healing"))
+        {
+            if (witch.healthAmount >= 0 && witch.healthAmount < 5)
+            {
+                witch.healthAmount++;
+                Destroy(collision.gameObject);
+            }
+
+        }
     }
 }
 

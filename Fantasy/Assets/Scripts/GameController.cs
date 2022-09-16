@@ -6,6 +6,8 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public GameObject GameOverPanel;
+    public GameObject HealthBar;
+    public GameObject HealingPower;
     public LittleWitch witch;
     public int playerHealthAmount;
     [SerializeField] private TextMeshProUGUI HealinghNumber;
@@ -36,6 +38,8 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(.9f);
         GameOverPanel.SetActive(true);
+        HealthBar.SetActive(false);
+        HealingPower.SetActive(false);
         Time.timeScale = 0.6f;
     }
 

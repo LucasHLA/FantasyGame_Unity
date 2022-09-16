@@ -9,6 +9,7 @@ TagManager:
   - Blue
   - Ground
   - Mage
+  - Healing
   layers:
   - Default
   - TransparentFX
