@@ -14,7 +14,6 @@ public class Mage_Skeleton : EnemyController
     [SerializeField] private Transform point;
     [SerializeField] private Transform behindPoint;
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private GameObject healingPrefab;
     [SerializeField] private Transform firePoint;
 
     private Vector2 direction;

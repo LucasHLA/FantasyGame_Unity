@@ -203,6 +203,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   speed: 0
+  healingPrefab: {fileID: 4157723979015835876, guid: 86b13d3cb34875f4f8324a4c5b79c6ff,
+    type: 3}
   leftCap: -4
   rightCap: 4
   jumpHeight: 3

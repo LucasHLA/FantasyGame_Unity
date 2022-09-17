@@ -14,15 +14,13 @@ public class HealingEssence : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         tr = GetComponent<Transform>();
         rb.AddForce(Vector2.up * yImpulse, ForceMode2D.Impulse);
+        StartCoroutine(freezeEssence());
         Destroy(this.gameObject, 7f);
     }
 
-    private void Update()
+    IEnumerator freezeEssence()
     {
-        if (rb.IsTouchingLayers(ground))
-        {
-            rb.constraints = RigidbodyConstraints2D.FreezePositionY;
-            rb.velocity = Vector2.zero;
-        }
+        yield return new WaitForSeconds(1f);
+        rb.constraints = RigidbodyConstraints2D.FreezePositionY;
     }
 }

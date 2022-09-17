@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] protected int health;
     [SerializeField] protected int speed;
+    [SerializeField] protected  GameObject healingPrefab;
     protected Rigidbody2D rb;
     protected Animator anim;
 
@@ -30,6 +31,7 @@ public class EnemyController : MonoBehaviour
        speed = 0;
        rb.velocity = Vector2.zero;
        anim.SetTrigger("death");
-       Destroy(this.gameObject,.5f);
+        Instantiate(healingPrefab, transform.position, healingPrefab.transform.rotation);
+        Destroy(this.gameObject,.5f);
     }
 }
