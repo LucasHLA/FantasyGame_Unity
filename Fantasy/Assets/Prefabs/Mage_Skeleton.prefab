@@ -167,8 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a87e04d09da06d489da5f4e66baf439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 3
   speed: 3
+  healingPrefab: {fileID: 4157723979015835876, guid: 86b13d3cb34875f4f8324a4c5b79c6ff,
+    type: 3}
   maxVision: 6
   stopDistance: 4
   isFront: 0
@@ -176,8 +178,6 @@ MonoBehaviour:
   point: {fileID: 8914913895066290242}
   behindPoint: {fileID: 8914913895030777585}
   bulletPrefab: {fileID: 2908104183145900255, guid: d54560eb586f563478b851a6e03ad727,
-    type: 3}
-  healingPrefab: {fileID: 4157723979015835876, guid: 86b13d3cb34875f4f8324a4c5b79c6ff,
     type: 3}
   firePoint: {fileID: 8914913894577244940}
 --- !u!1 &8914913894577244941

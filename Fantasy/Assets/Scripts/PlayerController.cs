@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     protected bool isJumping;
     protected bool isAttacking;
     protected bool isRunning;
+    protected bool isDisable;
     private float recoverTime;
     private float gameOverTime;
 
@@ -33,12 +34,26 @@ public class PlayerController : MonoBehaviour
         maxHealth = 10;
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
     }
 
     protected virtual void Update()
     {
+        if (!isDisable)
+        {
+            Jump();
+        }
         healthBar.SetHealth(health);
-        Jump();
+
+        if (GameController.instance.isPaused == true)
+        {
+            isDisable = true;
+        }
+        else if(GameController.instance.isPaused == false)
+        {
+            isDisable = false;
+        }
+        
     }
 
     protected virtual void FixedUpdate()

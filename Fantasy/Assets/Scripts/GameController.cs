@@ -8,16 +8,22 @@ public class GameController : MonoBehaviour
     public GameObject GameOverPanel;
     public GameObject HealthBar;
     public GameObject HealingPower;
+    public GameObject PauseScreen;
+    public GameObject Portal;
     public LittleWitch witch;
     public int playerHealthAmount;
     [SerializeField] private TextMeshProUGUI HealinghNumber;
     public Animator healthPower;
     public Animator heart;
     public static GameController instance;
+
+    public bool isPaused;
     void Start()
     {
         instance = this;
         HealinghNumber.text = playerHealthAmount.ToString();
+        isPaused = false;
+        Destroy(Portal, 1f);
     }
 
     // Update is called once per frame
@@ -27,6 +33,7 @@ public class GameController : MonoBehaviour
         HealthPowerState();
         HealinghNumber.text = playerHealthAmount.ToString();
         HeartState();
+        PauseGame();
     }
 
     public void ShowGameOver()
@@ -41,6 +48,28 @@ public class GameController : MonoBehaviour
         HealthBar.SetActive(false);
         HealingPower.SetActive(false);
         Time.timeScale = 0.6f;
+    }
+
+    private void PauseGame()
+    {
+        if (!isPaused && Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseScreen.SetActive(true);
+            isPaused = true;
+            Time.timeScale = 0f;
+        }
+        else if (isPaused)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                PauseScreen.SetActive(false);
+                isPaused = false;
+                Time.timeScale = 1f;
+            }
+        }
+
+
+
     }
 
     public void HealthPowerState()

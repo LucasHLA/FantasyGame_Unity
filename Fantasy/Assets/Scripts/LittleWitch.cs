@@ -22,8 +22,11 @@ public class LittleWitch : PlayerController
     protected override void Update()
     {
         base.Update();
-        Attack();
-        HealthPower();
+        if (!isDisable)
+        {
+            Attack();
+            HealthPower();
+        } 
     }
 
     protected override void FixedUpdate()
