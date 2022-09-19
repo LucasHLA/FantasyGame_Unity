@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - Mage
   - Healing
+  - Portal
   layers:
   - Default
   - TransparentFX

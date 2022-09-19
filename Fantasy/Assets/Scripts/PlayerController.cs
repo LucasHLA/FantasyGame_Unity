@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
         if (!isDisable)
         {
             Jump();
+            Fall();
         }
         healthBar.SetHealth(health);
 
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour
         {
             isDisable = false;
         }
-        
+
     }
 
     protected virtual void FixedUpdate()
@@ -107,15 +108,19 @@ public class PlayerController : MonoBehaviour
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 isJumping = true;
             }
-            if (isJumping)
-            {
-                if (rb.velocity.y < 1f)
-                {
-                    anim.SetInteger("state", 3);
-                }
-            }
         }
 
+    }
+
+    private void Fall()
+    {
+        if(rb.velocity.y < 1f)
+        {
+            if (isJumping)
+            {
+                anim.SetInteger("state", 3);
+            }
+        }
     }
 
     public void OnHit(int dmg)

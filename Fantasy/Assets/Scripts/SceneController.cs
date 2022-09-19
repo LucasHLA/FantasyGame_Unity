@@ -5,13 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    [SerializeField] private string sceneName;
-    
-    public void SceneLoader()
+    public void SceneLoader(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
         Time.timeScale = 1f;
     }
-
-
 }
