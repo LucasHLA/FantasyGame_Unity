@@ -64,7 +64,7 @@ public class LittleWitch : PlayerController
             StartCoroutine(OnShooting());
         }
 
-        if(!isAttacking && isJumping && Input.GetButtonDown("Fire1"))
+        if(!isAttacking && (isJumping || isFalling) && Input.GetButtonDown("Fire1"))
         {
             anim.SetInteger("state", 5);
             isAttacking = true;

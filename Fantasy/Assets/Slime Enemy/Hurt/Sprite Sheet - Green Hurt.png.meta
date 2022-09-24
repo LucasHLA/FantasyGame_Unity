@@ -1,7 +1,40 @@
 fileFormatVersion: 2
 guid: 03478eb05e157d445bd40dfb9f06f0d1
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3582929792314529393
+    second: Sprite Sheet - Green Hurt_0
+  - first:
+      213: -5930358258539423250
+    second: Sprite Sheet - Green Hurt_1
+  - first:
+      213: 1092018286536115964
+    second: Sprite Sheet - Green Hurt_2
+  - first:
+      213: -1253452224801862350
+    second: Sprite Sheet - Green Hurt_4
+  - first:
+      213: 4330575107213191810
+    second: Sprite Sheet - Green Hurt_5
+  - first:
+      213: -45749507988941164
+    second: Sprite Sheet - Green Hurt_6
+  - first:
+      213: 596396071797096498
+    second: Sprite Sheet - Green Hurt_7
+  - first:
+      213: -5527445623120968242
+    second: Sprite Sheet - Green Hurt_8
+  - first:
+      213: -4621507994520260246
+    second: Sprite Sheet - Green Hurt_9
+  - first:
+      213: 4213319169435893366
+    second: Sprite Sheet - Green Hurt_10
+  - first:
+      213: 2775625114330455086
+    second: Sprite Sheet - Green Hurt_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -31,7 +64,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -40,12 +73,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -64,7 +97,43 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -73,7 +142,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Sprite Sheet - Green Hurt_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1765216b9af19b130800000000000000
+      internalID: 3582929792314529393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet - Green Hurt_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 0
+        width: 40
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee914f0959223bda0800000000000000
+      internalID: -5930358258539423250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet - Green Hurt_2
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 0
+        width: 40
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf6473988d0a72f00800000000000000
+      internalID: 1092018286536115964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet - Green Hurt_4
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d03c5b7d7da9ee0800000000000000
+      internalID: -1253452224801862350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet - Green Hurt_5
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 0
+        width: 44
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a679a9d1b491c30800000000000000
+      internalID: 4330575107213191810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet - Green Hurt_6
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 0
+        width: 47
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4969bab90177d5ff0800000000000000
+      internalID: -45749507988941164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet - Green Hurt_7
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 0
+        width: 49
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23087e44113d64800800000000000000
+      internalID: 596396071797096498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet - Green Hurt_8
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 0
+        width: 50
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec5469ecd719a43b0800000000000000
+      internalID: -5527445623120968242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet - Green Hurt_9
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 0
+        width: 50
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a61fdfbf6fa1ddfb0800000000000000
+      internalID: -4621507994520260246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet - Green Hurt_10
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 50
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67ef1932677b87a30800000000000000
+      internalID: 4213319169435893366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet - Green Hurt_11
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 0
+        width: 47
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2cd159e550058620800000000000000
+      internalID: 2775625114330455086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

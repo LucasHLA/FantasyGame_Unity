@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     protected bool isAttacking;
     protected bool isRunning;
     protected bool isDisable;
+    protected bool isFalling;
     private float recoverTime;
     private float gameOverTime;
 
@@ -114,14 +115,23 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void Fall()
+    protected void Fall()
     {
-        if(rb.velocity.y < 0.1f)
+        if(rb.velocity.y < 0.1f )
         {
+            isFalling = true;
             if (isJumping)
             {
+                isFalling = true;
                 anim.SetInteger("state", 3);
             }
+
+            /*if (isRunning)
+            {
+                isFalling = true;
+                anim.SetInteger("state", 3);
+            }*/
+
         }
     }
 
