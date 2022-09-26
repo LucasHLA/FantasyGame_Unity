@@ -57,6 +57,8 @@ public class PlayerController : MonoBehaviour
             isDisable = false;
         }
 
+        
+
     }
 
     protected virtual void FixedUpdate()
@@ -125,12 +127,16 @@ public class PlayerController : MonoBehaviour
                 isFalling = true;
                 anim.SetInteger("state", 3);
             }
+        }
 
-            /*if (isRunning)
+        if (rb.position.y > 1f)
+        {
+            if (rb.velocity.y < 0f && isRunning)
             {
                 isFalling = true;
+                isRunning = false;
                 anim.SetInteger("state", 3);
-            }*/
+            }
 
         }
     }
