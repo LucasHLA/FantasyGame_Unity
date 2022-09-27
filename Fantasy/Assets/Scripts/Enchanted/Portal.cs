@@ -20,7 +20,7 @@ public class Portal : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                
+                scene.SceneLoader(sceneName);
             }
             
         }
@@ -36,7 +36,7 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("PLayer"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             canTeleport = false;
         }

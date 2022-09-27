@@ -11,6 +11,7 @@ public class PlayerAudio : MonoBehaviour
     public AudioClip attack;
     public AudioClip jump;
     public AudioClip footSteps;
+    public AudioClip heal;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
