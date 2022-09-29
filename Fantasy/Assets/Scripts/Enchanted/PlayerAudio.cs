@@ -12,6 +12,9 @@ public class PlayerAudio : MonoBehaviour
     public AudioClip jump;
     public AudioClip footSteps;
     public AudioClip heal;
+    public AudioClip slimeHit;
+    public AudioClip blueSlimeHit;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();

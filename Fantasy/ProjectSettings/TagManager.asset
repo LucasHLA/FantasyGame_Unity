@@ -12,6 +12,7 @@ TagManager:
   - Healing
   - Portal
   - GameMusic
+  - Magic
   layers:
   - Default
   - TransparentFX

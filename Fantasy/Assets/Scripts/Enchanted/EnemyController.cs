@@ -34,4 +34,6 @@ public class EnemyController : MonoBehaviour
         Instantiate(healingPrefab, transform.position, healingPrefab.transform.rotation);
         Destroy(this.gameObject,.5f);
     }
+
+    
 }

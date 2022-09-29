@@ -7,6 +7,7 @@ public class MagicProjectile : MonoBehaviour
     public float speed;
     public Rigidbody2D rb;
     [SerializeField] private Transform firePoint;
+    [SerializeField] protected PlayerAudio audio;
     private Animator anim;
     void Start()
     {
@@ -21,6 +22,7 @@ public class MagicProjectile : MonoBehaviour
         if (collision.CompareTag("Enemy") || collision.CompareTag("Red"))
         {
             anim.SetTrigger("hit");
+            //audio.PlaySFX(audio.slimeHit);
             collision.gameObject.GetComponent<EnemyController>().OnHit(1);
             Destroy(this.gameObject,0.19f);
             
@@ -28,6 +30,7 @@ public class MagicProjectile : MonoBehaviour
         if (collision.CompareTag("Blue"))
         {
             anim.SetTrigger("hit");
+            //audio.PlaySFX(audio.slimeHit);
             collision.gameObject.GetComponent<EnemyController>().OnHit(1);
             Destroy(this.gameObject, 0.19f);
         }

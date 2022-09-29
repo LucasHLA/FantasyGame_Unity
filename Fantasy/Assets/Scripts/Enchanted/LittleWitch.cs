@@ -85,6 +85,7 @@ public class LittleWitch : PlayerController
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         Instantiate(healingParticle, transform.position, healingParticle.transform.rotation);
+                        playerAudio.PlaySFX(playerAudio.heal);
                         healthAmount--;
                         health += 2;
 
@@ -95,6 +96,7 @@ public class LittleWitch : PlayerController
                 if (Input.GetKeyDown(KeyCode.E) && health == 9)
                 {
                     Instantiate(healingParticle, transform.position, healingParticle.transform.rotation);
+                    playerAudio.PlaySFX(playerAudio.heal);
                     healthAmount--;
                     health += 1;
                 }
