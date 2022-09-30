@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] protected int health;
     [SerializeField] protected int speed;
     [SerializeField] protected  GameObject healingPrefab;
+    [SerializeField] protected EnemyAudio enemyAudio;
     protected Rigidbody2D rb;
     protected Animator anim;
 
@@ -20,7 +21,7 @@ public class EnemyController : MonoBehaviour
     {
         health -= dmg;
         anim.SetTrigger("hit");
-        if(health <= 0)
+        if (health <= 0)
         {
             Death();
         }

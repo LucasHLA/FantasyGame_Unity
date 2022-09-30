@@ -122,7 +122,7 @@ public class Slime : EnemyController
     {
         if (collision.gameObject.CompareTag("Magic"))
         {
-            Debug.Log("Acertou");
+            enemyAudio.PlaySFX(enemyAudio.redGreenSlimeHit);
         }
     }
 }
