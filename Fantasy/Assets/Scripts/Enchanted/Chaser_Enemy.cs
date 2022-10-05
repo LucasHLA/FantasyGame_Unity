@@ -30,7 +30,7 @@ public class Chaser_Enemy : EnemyController
             transform.eulerAngles = new Vector2(0, 180);
             direction = Vector2.right;
 
-        }
+        } 
     }
 
     private void FixedUpdate()

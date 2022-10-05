@@ -33,8 +33,7 @@ public class EnemyController : MonoBehaviour
        rb.velocity = Vector2.zero;
        anim.SetTrigger("death");
         Instantiate(healingPrefab, transform.position, healingPrefab.transform.rotation);
+        enemyAudio.PlaySFX(enemyAudio.blueSlimeDeath);
         Destroy(this.gameObject,.5f);
     }
-
-    
 }

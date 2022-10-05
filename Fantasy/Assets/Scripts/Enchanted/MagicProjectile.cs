@@ -9,6 +9,7 @@ public class MagicProjectile : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] protected PlayerAudio audio;
     private Animator anim;
+    private int blueSlimeHealth;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,9 +31,9 @@ public class MagicProjectile : MonoBehaviour
         if (collision.CompareTag("Blue"))
         {
             anim.SetTrigger("hit");
-            //audio.PlaySFX(audio.slimeHit);
             collision.gameObject.GetComponent<EnemyController>().OnHit(1);
             Destroy(this.gameObject, 0.19f);
+            
         }
 
         if (collision.CompareTag("Mage"))
