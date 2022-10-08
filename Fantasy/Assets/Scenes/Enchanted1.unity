@@ -530,7 +530,7 @@ MonoBehaviour:
   health: 10
   maxHealth: 0
   healthAmount: 0
-  bulletPrefab: {fileID: 5559135074074505888, guid: 756844047623e9e42b5efd25bc6b3cf5,
+  bulletPrefab: {fileID: 3207687313068340317, guid: de5ffe61a9afca04288ecf88aff212bf,
     type: 3}
   firePoint: {fileID: 1114005416}
   healthMax: 0
@@ -32323,6 +32323,11 @@ PrefabInstance:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 1551882254}
+    - target: {fileID: 6084975791803001400, guid: 0f6aa94f77b692943b8961d7580e945c,
+        type: 3}
+      propertyPath: particula
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6084975791803001400, guid: 0f6aa94f77b692943b8961d7580e945c,
         type: 3}
       propertyPath: PauseScreen

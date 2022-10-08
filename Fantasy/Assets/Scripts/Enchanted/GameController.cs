@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public GameObject GameOverPanel;
+    public GameObject particula;
     public GameObject HealthBar;
     public GameObject HealingPower;
     public GameObject PauseScreen;
@@ -24,6 +25,7 @@ public class GameController : MonoBehaviour
         HealinghNumber.text = playerHealthAmount.ToString();
         isPaused = false;
         Destroy(Portal, 1f);
+        Destroy(particula, 2f);
     }
 
     // Update is called once per frame
