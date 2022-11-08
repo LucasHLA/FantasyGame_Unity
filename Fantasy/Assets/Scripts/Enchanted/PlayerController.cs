@@ -21,11 +21,11 @@ public class PlayerController : MonoBehaviour
     protected bool isJumping;
     protected bool isAttacking;
     protected bool isRunning;
-    protected bool isDisable;
+    [SerializeField] public bool isDisable;
     protected bool isFalling;
     private float recoverTime;
     private float gameOverTime;
-
+    [SerializeField] protected DialogueController dialogue;
 
     protected virtual void Start()
     {
@@ -36,16 +36,18 @@ public class PlayerController : MonoBehaviour
         maxHealth = 10;
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-
+        isDisable = true;
     }
 
     protected virtual void Update()
     {
-        if (!isDisable)
+        Debug.Log(dialogue.isTalking);
+        if(dialogue.isTalking == false && !isDisable)
         {
             Jump();
             Fall();
         }
+
         healthBar.SetHealth(health);
 
         if (GameController.instance.isPaused == true)
@@ -63,7 +65,10 @@ public class PlayerController : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        Movement();
+        if (dialogue.isTalking == false && !isDisable)
+        {
+            Movement();
+        }
     }
 
     void Movement()

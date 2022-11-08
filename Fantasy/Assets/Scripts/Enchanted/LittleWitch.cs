@@ -17,12 +17,13 @@ public class LittleWitch : PlayerController
         base.Start();
         healthMax = 5;
         healthMin = 0;
+        
     }
 
     protected override void Update()
     {
         base.Update();
-        if (!isDisable)
+        if (!isDisable && dialogue.isTalking == false)
         {
             Attack();
             HealthPower();

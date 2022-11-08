@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public GameObject PauseScreen;
     public GameObject Portal;
     public LittleWitch witch;
+    public DialogueController dialogueController;
     public int playerHealthAmount;
     [SerializeField] private TextMeshProUGUI HealinghNumber;
     public Animator healthPower;
@@ -26,6 +27,8 @@ public class GameController : MonoBehaviour
         isPaused = false;
         Destroy(Portal, 1f);
         Destroy(particula, 2f);
+        dialogueController.startDialogue();
+        
     }
 
     // Update is called once per frame
