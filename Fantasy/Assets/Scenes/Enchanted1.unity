@@ -27543,10 +27543,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 689111322}
   dialogueText: {fileID: 974376640}
+  nameText: {fileID: 1873523589}
   dialogue:
-  - Hello
-  - Testing the dialogue box
+  - Where are we Pixie?
+  - Looks like we are in the magic lands!
+  names:
+  - Stella
+  - Pixie
   index: 0
+  index2: 0
   textSpeed: 0.2
   isTalking: 0
 --- !u!4 &1384306813
@@ -28062,7 +28067,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Name
+  m_Text: '
 
 '
 --- !u!222 &1873523590
