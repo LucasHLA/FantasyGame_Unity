@@ -33,6 +33,15 @@ public class DialogueController : MonoBehaviour
         }
 
         nameText.text = names[index];
+        
+        if(nameText.text == "Pixie")
+        {
+            nameText.color = new Color32(75, 229, 212, 255);
+        }
+        else
+        {
+            nameText.color = new Color32(188, 65, 179, 255);
+        }
     }
         
     public void zeroText()
@@ -64,7 +73,7 @@ public class DialogueController : MonoBehaviour
 
     public void nextLine()
     {
-            if (Input.GetKeyDown(KeyCode.H))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 index++;
                 index2++;
