@@ -14,6 +14,7 @@ public class PlayerAudio : MonoBehaviour
     public AudioClip heal;
     public AudioClip slimeHit;
     public AudioClip blueSlimeHit;
+    public AudioClip dialogueSound;
 
     void Start()
     {

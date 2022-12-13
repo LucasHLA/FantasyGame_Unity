@@ -9,6 +9,7 @@ public class DialogueController : MonoBehaviour
     public GameObject dialoguePanel;
     public Text dialogueText;
     public Text nameText;
+    [SerializeField] private PlayerAudio dialogueAudio;
     public string[] dialogue;
     public string[] names;
     public int index;
@@ -57,6 +58,7 @@ public class DialogueController : MonoBehaviour
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(textSpeed);
+            dialogueAudio.PlaySFX(dialogueAudio.dialogueSound);
         }
 
         

@@ -32130,6 +32130,11 @@ PrefabInstance:
       objectReference: {fileID: 974376640}
     - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
         type: 3}
+      propertyPath: dialogueAudio
+      value: 
+      objectReference: {fileID: 383171452}
+    - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
+        type: 3}
       propertyPath: dialoguePanel
       value: 
       objectReference: {fileID: 689111322}
@@ -32782,6 +32787,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6449526362837150108, guid: d5d623e62ebb61646ba865a83d2f68f0,
+        type: 3}
+      propertyPath: dialogueSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f71eea319230e4746a4b9cdb9da32246, type: 3}
     - target: {fileID: 6449526363345128282, guid: d5d623e62ebb61646ba865a83d2f68f0,
         type: 3}
       propertyPath: m_Name
