@@ -32120,6 +32120,11 @@ PrefabInstance:
       objectReference: {fileID: 1873523589}
     - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
         type: 3}
+      propertyPath: textSpeed
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
+        type: 3}
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 974376640}
@@ -32131,12 +32136,12 @@ PrefabInstance:
     - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
         type: 3}
       propertyPath: names.Array.size
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
         type: 3}
       propertyPath: dialogue.Array.size
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
         type: 3}
@@ -32150,13 +32155,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
         type: 3}
+      propertyPath: names.Array.data[4]
+      value: Pixie
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
+        type: 3}
+      propertyPath: names.Array.data[5]
+      value: Pixie
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
+        type: 3}
+      propertyPath: names.Array.data[6]
+      value: Stella
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
+        type: 3}
+      propertyPath: names.Array.data[7]
+      value: Stella
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: Pixie...What happened?...where are we?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
+        type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: Looks like we are in the magical landscapes Stella!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
+        type: 3}
       propertyPath: dialogue.Array.data[2]
       value: How do we come back home?
       objectReference: {fileID: 0}
     - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
         type: 3}
       propertyPath: dialogue.Array.data[3]
-      value: We need to find the portals
+      value: We need to find the portals!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
+        type: 3}
+      propertyPath: dialogue.Array.data[4]
+      value: It teleports you to a random location
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
+        type: 3}
+      propertyPath: dialogue.Array.data[5]
+      value: If we are lucky we will come back to our home
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
+        type: 3}
+      propertyPath: dialogue.Array.data[6]
+      value: All right, lets try it! I hope it works...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103532943995610273, guid: 4052ac61b2a98064697466ea5c516208,
+        type: 3}
+      propertyPath: dialogue.Array.data[7]
+      value: All right, lets try it!
       objectReference: {fileID: 0}
     - target: {fileID: 1103532943995610278, guid: 4052ac61b2a98064697466ea5c516208,
         type: 3}
@@ -32176,6 +32231,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824938853932096222, guid: c58ded839c42a9d4995892d145abbdbd,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 345.2956
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824938853932096222, guid: c58ded839c42a9d4995892d145abbdbd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -118.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824938854080686675, guid: c58ded839c42a9d4995892d145abbdbd,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 504.01895
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824938854080686675, guid: c58ded839c42a9d4995892d145abbdbd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -115.61
       objectReference: {fileID: 0}
     - target: {fileID: 2824938854147997326, guid: c58ded839c42a9d4995892d145abbdbd,
         type: 3}
