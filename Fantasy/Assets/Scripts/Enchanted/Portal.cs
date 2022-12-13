@@ -6,6 +6,7 @@ public class Portal : MonoBehaviour
 {
     [SerializeField] private SceneController scene;
     [SerializeField] private string sceneName;
+    [SerializeField] private GameObject fIndicator;
     private bool canTeleport;
 
     private Collider2D col;
@@ -24,6 +25,8 @@ public class Portal : MonoBehaviour
             }
             
         }
+
+        fIndicator.transform.eulerAngles = new Vector3 (0, 0, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,6 +34,7 @@ public class Portal : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             canTeleport = true;
+            fIndicator.SetActive(true);
         }
     }
 
@@ -39,6 +43,7 @@ public class Portal : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             canTeleport = false;
+            fIndicator.SetActive(false);
         }
     }
 }
